@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "../Context/AppContext";
 import { assets, JobCategories, JobLocations } from "../assets/assets";
+import JobCard from "./JobCard";
 
 const JobSearch = () => {
   const { searchFilter, isSearched, setsearchFilter } = useContext(AppContext);
@@ -81,6 +82,9 @@ const JobSearch = () => {
                 <h3 className="font-medium text-xl">Latest jobs</h3>
                 <p className="text-gray-500">Get your desired job from top companies</p>
               </section>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <JobCard/>
+              </div>
               </div>
           )
       }

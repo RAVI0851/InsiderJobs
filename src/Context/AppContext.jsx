@@ -6,10 +6,10 @@ export const AppContextProvider = (props) => {
     
     const [searchFilter, setsearchFilter] = useState({
         title:'',
-        location:''
+        location:'Banglore' //Making this true for just development ,make sure to change this
     })
     
-    const [isSearched,setisSearched] = useState(false);
+    const [isSearched,setisSearched] = useState(true); //Making this true for just development ,make sure to change this to false
 
     const value = {
         setsearchFilter,searchFilter,
