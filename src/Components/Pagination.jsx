@@ -17,7 +17,7 @@ const Pagination = () => {
         {
             Array.from({length:Math.ceil(jobs.length/6)}).map((_,index)=>(
                 <a href="" className=' ' onClick={(e)=>{e.preventDefault();setPageNo(index+1);}}>
-                    <button className={`border ml-2 mr-2 px-3 py-3 h-10 w-10 bg-gray-50 rounded flex items-center justify-center ${pageNo===index+1 ? 'bg-blue-300 text-blue-500' : 'text-gray-500'}`}>{index+1}</button>
+                    <button className={`border ml-2 mr-2 px-3 py-3 h-10 w-10 rounded flex items-center justify-center ${pageNo===index+1 ? 'bg-blue-700 text-white' : 'bg-gray-50 text-black'}`}>{index+1}</button>
                 </a>
             ))
         }

@@ -35,13 +35,13 @@ const Hero = () => {
         <div className='md:flex justify-between mx-auto p-2 md:p-1 items-center bg-white text-black mt-4 gap-1 rounded md:w-1/2 ' >
           <div className='flex border gap-2 m-2'>
             <img src={assets.search_icon} alt="search" />
-            <input className='w-full ' type="text" placeholder=' Search for jobs' ref={titleref} />
+            <input className='w-full p-2 ' type="text" placeholder=' Search for jobs' ref={titleref} />
           </div>
           <div className='border flex gap-2 m-2'>
             <img src={assets.location_icon} alt=" Location" />
-            <input type="text" placeholder='location' ref={locationref} className=' w-full' />
+            <input type="text" placeholder='location' ref={locationref} className=' w-full p-2' />
           </div>
-          <button disabled={!titleref}  onClick={onSearch} className='bg-blue-600 rounded ml-[2rem] md:ml-0 items-center text-white px-2'>Search</button>
+          <button disabled={!titleref}  onClick={onSearch} className='bg-blue-600 rounded ml-[2rem] md:ml-0 p-2 items-center text-white px-2'>Search</button>
         </div>
       </div>
       <div className='flex justify-center gap-10 items-center shadow-md border max-sm:ml-8 p-4 flex-wrap md:mx-14 mt-8'>
