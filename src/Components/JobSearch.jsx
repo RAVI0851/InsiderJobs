@@ -5,8 +5,15 @@ import JobCard from "./JobCard";
 import Pagination from "./Pagination";
 
 const JobSearch = () => {
-  const { searchFilter, isSearched, setisSearched, setsearchFilter, jobs, pageNo, setPageNo } = useContext(AppContext);
+  const { searchFilter, isSearched, setisSearched, setsearchFilter, jobs, pageNo, setPageNo,selectedCategory,
+    setSelectedCategory,
+    selectedLocation,
+    setSelectedLocation,
+    handleSelectedCategory,
+    handleSelectedLocation,filteredJobs } = useContext(AppContext);
   const [showfilter, setShowfilter] = useState(false);
+
+
   return (
     <div className="container mx-14 flex flex-col lg:flex-row py-6">
       <div className="whitespace-nowrap mx-8">
@@ -69,9 +76,9 @@ const JobSearch = () => {
               <li key={index} className="flex items-center mt-3">
                 <input
                   type="checkbox"
-                  name=""
-                  id=""
                   className="mr-2 scale-125"
+                  checked = {selectedCategory.includes(category)}
+                  onChange={()=>handleSelectedCategory(category)}
                 />
                 {category}
               </li>
@@ -88,9 +95,10 @@ const JobSearch = () => {
               <li key={index} className="flex items-center mt-3">
                 <input
                   type="checkbox"
-                  name=""
-                  id=""
                   className="mr-2 scale-125"
+                  onChange={()=>handleSelectedLocation(location)}
+                  checked = {selectedLocation.includes(location)}
+                  
                 />
                 {location}
               </li>
@@ -106,14 +114,14 @@ const JobSearch = () => {
         </p>
         <div
           className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3`} >
-          {jobs.slice((pageNo-1)*6,(pageNo*6)).map((job, index) => (
+          {filteredJobs.slice((pageNo-1)*6,(pageNo*6)).map((job, index) => (
             <JobCard key={index} job={job} />
           ))}
         </div>
 
         {/* Pagination */}
         
-        <Pagination/>
+        <Pagination />
 
       </section>
     </div>
