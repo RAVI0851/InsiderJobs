@@ -1,7 +1,9 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import {useNavigate} from 'react-router-dom'
 
 const JobCard = ({job}) => {
+  const navigate = useNavigate();
   return (
     <div className="border flex flex-col w-[20rem] h-[18rem] p-4 my-2 shadow-md rounded-md]">
       <img
@@ -23,8 +25,8 @@ const JobCard = ({job}) => {
       </p>
       </div>
       <div>
-        <button className="bg-blue-500 border rounded-md m-2 text-white p-2">Apply now</button>
-        <button className="border-2 rounded-md m-2 p-2">Learn more</button>
+        <button onClick={()=>{navigate(`/apply-job/${job._id}`); scrollTo(0,0)}} className="bg-blue-500 border rounded-md m-2 text-white p-2">Apply now</button>
+        <button onClick={()=>{navigate(`/apply-job/${job._id}`); scrollTo(0,0)}} className="border-2 rounded-md m-2 p-2">Learn more</button>
       </div>
     </div>
   );
